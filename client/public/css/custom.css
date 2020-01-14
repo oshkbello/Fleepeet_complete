@@ -1,0 +1,279 @@
+/*********************************************************************************
+
+	Template Name: Boighor Bookshop Responsive Bootstrap4 Template
+	Description: Template description
+	Version: 1.0
+	Note: This is custom css. All custom styles (user styles) declare here.
+
+**********************************************************************************/
+
+.searchnv {
+  margin-top: 12px;
+  padding: 10px 25px;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.material-icons {
+  font-size: 2.4em;
+  cursor: pointer;
+}
+.card {
+  width: 300px;
+}
+.card .card-image .card-title {
+  color: black;
+  font-weight: 400;
+}
+.cart {
+  margin-top: 40px;
+}
+.collection .collection-item {
+  display: flex;
+}
+.collection-item.avatar .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ee6e73;
+  display: block;
+  margin-bottom: 20px;
+}
+.collection .collection-item img {
+  width: 150px;
+  margin-right: 25px;
+}
+.item-desc {
+  align-self: center;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(3.25rem + 1px);
+}
+.product .product__thumb a img {
+  height: 270px !important;
+}
+.pagination li {
+  margin: auto;
+}
+.ft__logo img {
+  width: 173px !important;
+}.pheader{float:left; width:100%; text-align:center;font-size:20px; font-weight:800;
+   padding:10px;border-bottom:1px solid #aaa; margin-bottom:10px;
+}.package {
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 5px #aaa;
+}
+
+.pbody{padding:25px;}
+
+.cards{margin:auto; width:70%; margin-bottom:20px;}
+
+.acard_detail{float:left; width:100%; text-align:center; font-size:16px; padding-top:10px;color:#333; margin-bottom:10px;}
+
+.acard_detail:hover{color:#333; text-decoration:none;}
+
+/****/
+
+
+.package2{float:left; width:50%; background:#fff;margin-left:25%;margin-bottom:30px; box-shadow:0 0 5px #aaa; position:relative;}
+
+.stripe{width:100px; height:100px; border-radius:10em;
+background:url(https://stripe.com/img/v3/home/twitter.png); background-size:cover; background-position:center;
+    position:absolute; top:-50px;left:43%;
+    /*border:5px solid #ececec;*/
+    box-shadow:0 0 5px #333;
+}
+
+.pheader2{float:left; width:100%; text-align:center;font-size:20px; font-weight:800;
+   padding:70px 10px 10px 10px;border-bottom:1px solid #aaa; margin-bottom:10px;
+}
+
+.pbody2{padding:25px;}
+
+.cards2{float:left; width:50%; margin-bottom:20px;}
+
+.acard_detail2{float:left; width:100%; font-size:16px; padding-top:10px;color:#333; margin-bottom:10px;}
+
+.acard_detail2:hover{color:#333; text-decoration:none;}
+
+.my-modal {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 5px 10px 2px rgba(195,192,192,.5);
+  padding: 20px;
+  text-align: center;
+ }
+ .modal-close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+ }
+ .modal-toggle-button {
+  cursor: pointer;
+  background-color:red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+ }
+ .modal-toggle-button:focus {
+  outline: none;
+ }
+ .prod_detials{
+font-size: 16px;
+font-weight: 600;
+ }
+ .text-muted{
+  font-weight: 400 !important;
+ }
+ .bio-image{
+  text-align:center;
+}
+.bio-image img{
+  border-radius:50%;
+}
+
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+body:after{
+  display:block !important;
+}
+.header{
+  height:65px !important;
+}
+.breadcrumbset{
+  background-size: 1920px 1280px;
+  background-position: center center;
+}
+
+
+.desktop-hover{
+  font-weight: bold;
+  align-items: center;
+    align-self: stretch;
+    color: rgb(63, 61, 61);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 20px;
+    transition: all 0.4s ease 0s;
+}
+.desktop-hover[title] {
+  color: #FFAE00;
+}
+.desktop-hover:hover{
+  color:#FFAE00;
+}
+
+#clr{
+  color:rgb(27, 27, 27);
+
+}
+
+#clr:hover{
+
+  text-decoration: #FFAE00;
+
+}
+.cartbox_active{
+  color:#FFAE00
+}
+.mr-auto NavDropdown[title]{
+  color:black;
+}
+.color--theme{
+  color:#FFAE00
+}
+.breadcrumb_item active{
+  color:#FFAE00;
+}
+.product .product__thumb .hot__box {
+    background-color: #FFAE00}
+    .product.product__style--3 .product__content .prize li{
+      color: #FFAE00
+    }
+
+    .product__info__main .box-tocart .addtocart__actions .tocart{
+      background-color: #FFAE00;
+    }
+    .product__info__main .box-tocart .addtocart__actions .tocart:hover{
+      background-color: rgba(253, 190, 53, 0.856);
+    }
+
+    .clr-scheme:hover{
+      color: #FFAE00
+    }
+    .clr-scheme li:hover{
+      color: #FFAE00
+    }
+    .wedget__categories.poroduct--tag ul li a:hover{
+      background-color: #FFAE00;
+      color:white
+    }
+    .btn-warning.disabled, .btn-warning:disabled{
+      background-color: #FFAE00;
+      color:white
+    }
+    .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span {
+      background-color: white;
+    }
+    .btn-link:hover{
+      color: #FFAE00 !important;
+    }
+    .bradcaump__inner .bradcaump-content .breadcrumb_item.active, .bradcaump__inner .bradcaump-content .breadcrumb_item{
+      color:#FFAE00 !important;
+    }
+
+    #home-hover-btn:hover{
+      color: #FFAE00;
+      background-color: #6D00A6;
+    }
+    .product .product__thumb .hot__box{
+      border-color: #FFAE00 !important;
+      background-color:#FFAE00 !important;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: black !important;
+      margin-left: 10px;
+    }
+    .navbar-light .navbar-nav .nav-link:hover {
+      color: #FFAE00 !important;
+    }
+
+    .image-gallery-slide img{
+      width: 300px !important;
+      height: 300px !important;
+    }
+    

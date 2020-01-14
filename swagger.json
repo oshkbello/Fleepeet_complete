@@ -1,0 +1,2349 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Flipeet",
+      "description": "Flipeet Books E-Commerce Store Apis Documentation",
+      "version": "1.0.0"
+    },
+    
+    "schemes": [
+      "http"
+    ],
+    "basePath": "/",
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/book/createBook": {
+        "post": {
+          "summary": "Create Book",
+          "description": "The Books endpoint to Publish a new Books",
+          "parameters": [
+            {
+                "name": "title",
+                "in": "query",
+                "description": "Title of Book.",
+                "type": "String"
+                
+              },
+              {
+                "name": "user",
+                "in": "query",
+                "description": "id of user creating new Book.",
+                "type": "String"
+                
+              },    {
+                "name": "oldPrice",
+                "in": "query",
+                "description": "old Price of Book.",
+                "type": "Number"
+                
+              },    {
+                "name": "author",
+                "in": "query",
+                "description": "Author of Book.",
+                "type": "String"
+                
+              },    {
+                "name": "description",
+                "in": "query",
+                "description": "Description of Book.",
+                "type": "String"
+                
+              },    {
+                "name": "quantity",
+                "in": "query",
+                "description": "Quantity of Book.",
+                "type": "Number"
+                
+              },    {
+                "name": "price",
+                "in": "query",
+                "description": "price of Book.",
+                "type": "Number"
+                
+              },{
+                "name": "weight",
+                "in": "query",
+                "description": "weight of Book.",
+                "type": "String"
+                
+              },
+              {
+                "name": "isbn",
+                "in": "query",
+                "description": "isbn of Book.",
+                "type": "String"
+                
+              },
+              {
+                "name": "book_images",
+                "consumes":"multipart/form-data",
+                "description": "Images of Book.",
+                "type": "file",
+                "in": "query"
+                
+              },    {
+                "name": "category",
+                "description": "Category of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },   {
+                "name": "tags",
+                "description": "Tags of Book.",
+                "type": "Array",
+                "in": "query"
+                
+              },    {
+                "name": "status",
+                "description": "Status of Book.",
+                "type": "String",
+                "enum": ["unpublished", "published"],
+                "in": "query"
+                
+              },   {
+                "name": "bookCondition",
+                "description": "Condition of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },  {
+                "name": "deliveryType",
+                "description": "Delivery Type of Book.",
+                "type": "String",
+                "enum": ["Delivery", "Meetup"],
+                "in": "query"
+                
+              },{
+                "name": "likes",
+                "description": "likes of Book.",
+                "type": "String",
+                "in": "query"
+                
+              }  ,{
+                "name": "publishedAt",
+                "description": "likes of Book.",
+                "type": "String"
+                
+              }    
+          ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book created Successfully"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      }, 
+      "/book/editBook": {
+        "post": {
+          "summary": "Edit Book",
+          "description": "The Books endpoint to Edit Book Details",
+          "parameters": [
+            {
+                "name": "title",
+                "description": "Title of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },
+              {
+                "name": "user",
+                "description": "id of user creating new Book.",
+                "type": "String",
+                "in": "query"
+                
+              },    {
+                "name": "oldPrice",
+                "description": "old Price of Book.",
+                "type": "Number",
+                "in": "query"
+                
+              },    {
+                "name": "author",
+                "description": "Author of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },    {
+                "name": "description",
+                "description": "Description of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },    {
+                "name": "quantity",
+                "description": "Quantity of Book.",
+                "type": "Number",
+                "in": "query"
+                
+              },    {
+                "name": "price",
+                "description": "price of Book.",
+                "type": "Number",
+                "in": "query"
+                
+              },{
+                "name": "weight",
+                "description": "weight of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },
+              {
+                "name": "isbn",
+                "description": "isbn of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },
+              {
+                "name": "book_images",
+                "description": "Images of Book.",
+                "type": "Array",
+                "in": "query"
+                
+              },    {
+                "name": "category",
+                "description": "Category of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },   {
+                "name": "tags",
+                "description": "Tags of Book.",
+                "type": "Array",
+                "in": "query"
+                
+              },    {
+                "name": "status",
+                "description": "Status of Book.",
+                "type": "String",
+                "enum": ["unpublished", "published"],
+                "in": "query"
+                
+              },   {
+                "name": "bookCondition",
+                "description": "Condition of Book.",
+                "type": "String",
+                "in": "query"
+                
+              },  {
+                "name": "deliveryType",
+                "description": "Delivery Type of Book.",
+                "type": "String",
+                "enum": ["Delivery", "Meetup"],
+                "in": "query"
+                
+              },{
+                "name": "likes",
+                "description": "likes of Book.",
+                "type": "String",
+                "in": "query"
+                
+              }  ,{
+                "name": "publishedAt",
+                "description": "likes of Book.",
+                "type": "String",
+                "in": "query"
+                
+              }    
+          ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book Edited Successfully"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/getnewbooks": {
+        "get": {
+          "summary": "Get New Books ",
+          "description": "Get newely Posted books",
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book get Successfully",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/getSellerNewBooks": {
+        "get": {
+          "summary": "Get Currently Loggedin User new Books ",
+          "description": "Get user newely Posted books",
+          "parameters": [
+            {
+                "name": "userid",
+                "description": "Currently loggedin user id.",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book get Successfully",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },   
+      "/book/filterbooks": {
+        "post": {
+          "summary": "Filter Books ",
+          "description": "Filter books",
+          "parameters": [
+            {
+                "name": "title",
+                "description": "title of field to filter with like author,isbn",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "query",
+                "description": "query of field to filter with",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "pageNo",
+                "description": "pageNo for pagination",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "data",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/getAllBooks": {
+        "post": {
+          "summary": "Get all Books ",
+          "description": "Get all books", 
+          "parameters": [
+            {
+                "name": "pageNo",
+                "description": "Page num for pagination.",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book get Successfully",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/getsellerbooks": {
+        "get": {
+          "summary": "Get Seller all Books ",
+          "description": "Get Seller all Books", 
+          "parameters": [
+            {
+                "name": "userid",
+                "description": "currently online user id",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book get Successfully",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/getSingleBook": {
+        "post": {
+          "summary": "Get Singlebook details ",
+          "description": "Get Singlebook details", 
+          "parameters": [
+            {
+                "name": "page",
+                "description": "page number for pagination",
+                "type": "String",
+                "in": "query"
+                
+              }, {
+                "name": "id",
+                "description": "id of book",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book get Successfully",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },"/book/searchBook": {
+        "post": {
+          "summary": "search Books ",
+          "description": "search books", 
+          "parameters": [
+            {
+                "name": "title",
+                "description": "title is search query",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "option",
+                "description": "option is search option to search with like isbn",
+                "type": "String",
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book Found in Record",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/book/commentBook": {
+        "post": {
+          "summary": "comment Books ",
+          "description": "comment books", 
+          "parameters": [
+            {
+                "name": "userid",
+                "description": "id of currently loggedin user",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "review",
+                "description": "comment on book",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "bookid",
+                "description": "book id on which comment created",
+                "type": "String",
+                "in": "query"
+                
+              },{
+                "name": "type",
+                "description": "option is search option to search with like isbn",
+                "type": "String",
+                "enum": ["Book Review"],
+                "in": "query"
+                
+              }
+            ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "Book Found in Record",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/PriceEstimate"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/getSellerNewBooks": {
+        "get": {
+          "summary": "Time Estimates",
+          "description": "The Time Estimates endpoint returns ETAs for all products offered at a given location, with the responses expressed as integers in seconds. We recommend that this endpoint be called every minute to provide the most accurate, up-to-date ETAs.",
+          "parameters": [
+            {
+              "name": "start_latitude",
+              "in": "query",
+              "description": "Latitude component of start location.",
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "start_longitude",
+              "in": "query",
+              "description": "Longitude component of start location.",
+              "type": "number",
+              "format": "double"
+            },
+            {
+              "name": "customer_uuid",
+              "in": "query",
+              "type": "string",
+              "format": "uuid",
+              "description": "Unique customer identifier to be used for experience customization."
+            },
+            {
+              "name": "product_id",
+              "in": "query",
+              "type": "string",
+              "description": "Unique identifier representing a specific product for a given latitude & longitude."
+            }
+          ],
+          "tags": [
+            "Books"
+          ],
+          "responses": {
+            "200": {
+              "description": "An array of products",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Product"
+                }
+              }
+            },
+            "401": {
+              "description": "Token Authorization Denied..!",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Product"
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/register": {
+        "post": {
+          "summary": "Register a new User itself",
+          "description": "When a cutomer visit our site and want to buy or sale a book than he must Register itSelf in this site with personal information",
+          "parameters":[
+            {
+              "name": "firstName",
+              "in": "query",
+              "description": "First Name of User.",
+              "type": "String"
+
+            },
+            {
+              "name": "lastName",
+              "in": "query",
+              "description": "Last Name of User.",
+              "type": "String"
+
+            },
+            {
+              "name": "email",
+              "in": "query",
+              "description": "Email of User.",
+              "type": "String"
+
+            },
+            {
+              "name": "password",
+              "in": "query",
+              "description": "Password of User.",
+              "type": "String"
+
+            },
+            {
+              "name": "conform password",
+              "in": "query",
+              "description": "Confirm Password of User",
+              "type": "String"
+
+            },
+            {
+              "name": "role",
+              "enum": ["admin", "user"],
+              "in": "query",
+              "description": "there are two roles of user first is 'user' and Second is 'admin'",
+              "type": "String"
+
+            },
+            {
+              "name": "profile_image",
+              "consumes": "multipart/form-data",
+              "in": "query",
+              "description": "Image of User",
+              "type": "String"
+
+            },
+            {
+              "name": "accountType",
+              "enum": ["student", "non-student"],
+              "in": "query",
+              "description": "There two accountType first is student, and second is non-student .",
+              "type": "String"
+
+            },
+            {
+              "name": "school",
+              "in": "query",
+              "description": "if the user id student then this field is used to data.",
+              "type": "String"
+
+            },
+            {
+              "name": "city",
+              "in": "query",
+              "description": "City of User.",
+              "type": "String"
+
+            },
+            {
+              "name": "tickets",
+              "in": "query",
+              "description": "Every user give by default 5 tickets.",
+              "type": "Number"
+
+            },
+            {
+              "name": "status",
+              "in": "query",
+              "description": "There three status of user but in there endpoint the default status is deactive.",
+              "type": "String"
+
+            }
+            
+
+          ],
+          "tags": [
+            "User"
+          ],
+
+          "responses": {
+            "200": {
+              "description": "Personal Information of User"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/verify/:_id": {
+        "get": {
+          "summary": "Verify the user account.",
+          "description": "This endpoint use to verify the user account when verification email send to user than is endponit is used.",
+          "parameters": [
+            {
+              "name":"_id",
+              "description": "This is user to identify the user.",
+              "type":"String",
+              "in":"query"
+
+            }
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User Account Verify Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/forgetPassword": {
+        "post": {
+          "summary": "This endpoint is used to forget user password.",
+          "description": "If the user don't remembered the password than User put email and verfication token send to user.",
+          "parameters": [
+            {
+              "name":"email",
+              "description": "This is used to input from their email from user and send email.",
+              "type":"String"
+
+            }
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Reset Token Send to User Email"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/resetPassword/:token": {
+        "put": {
+          "summary": "Create new password of user.",
+          "description": "If user has correct reset token then user create user password.",
+          "parameters": [
+            {
+              "name": "token",
+              "description": "This is reset token that is send from server forget password api and verify this token.",
+              "type": "String",
+              "in":"query"
+
+            },
+            {
+              "name": "password",
+              "description": "User Password.",
+              "type": "String"
+
+            },
+            {
+              "name": "conform password",
+              "description": "User confirm Password",
+              "type": "String"
+            }
+
+        ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Reset User Password Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/active-account": {
+        "post": {
+          "summary": "Activate the user status.",
+          "description": "If the user status is 'deactive or suspend than this api is used to send email.",
+          "parameters": [
+            {
+              "name": "email",
+              "description": "User email used to send Email.",
+              "type": "String"
+
+            }
+
+        ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User Email Send Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/login": {
+        "post": {
+          "summary": "Login user.",
+          "description": "When the user register account sussfully then he able to login.",
+          "parameters": [
+            {
+              "name": "email",
+              "description": "User email used to verify the user account.",
+              "type": "String"
+
+            },
+            {
+              "name": "password",
+              "description": "User password is used to matach password with email..",
+              "type": "String"
+
+            }
+
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "if the user input data is correct than user login successfully loggedin."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/user/edit": {
+        "put": {
+          "summary": "Update User Profile",
+          "description": "When the user register account sussfully then he able to login.",
+          "parameters": [
+            {
+              "name": "firstName",
+              "description": "First Name of User.",
+              "type": "String"
+
+            }, {
+              "name": "lastName",
+              "description": "Last Name of User.",
+              "type": "String"
+
+            }, {
+              "name": "email",
+              "description": "Email of User.",
+              "type": "String"
+
+            }, {
+              "name": "password",
+              "description": "Password of User.",
+              "type": "String"
+
+            }, {
+              "role": "conform password",
+              "description": "Confirm Password of User",
+              "type": "String"
+
+            }, {
+              "name": "role",
+              "in": "query",
+              "enum": ["admin", "user"],
+              "description": "there are two roles of user first is 'user' and Second is 'admin'",
+              "type": "String"
+
+            }, {
+              "name": "profile_image",
+              "consumes": "multipart/form-data",
+              "in": "query",
+              "description": "Image of User",
+              "type": "String"
+
+            }, {
+              "name": "accountType",
+              "enum": ["student", "non-student"],
+              "description": "There two accountType first is student, and second is non-student .",
+              "type": "String"
+
+            }, {
+              "name": "school",
+              "in": "query",
+              "description": "if the user id student then this field is used to data.",
+              "type": "String"
+
+            }, {
+              "name": "city",
+              "in": "query",
+              "description": "City of User.",
+              "type": "String"
+
+            }, {
+              "name": "tickets",
+              "in": "query",
+              "description": "Every user give by default 5 tickets.",
+              "type": "Number"
+
+            }, {
+              "name": "status",
+              "in": "query",
+              "description": "There three status of user but in there endpoint the default status is deactive.",
+              "type": "String"
+
+            }
+
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User profile update"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/userTickets": {
+        "get": {
+          "summary": "Get Ticket Details of User.",
+          "description": "This end point is used to get details of tickets to admin side.",
+          "parameters": [{
+              "name": "_id",
+              "description": "Authenticated user id.",
+              "type": "String"
+
+            }
+
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User Tickets Details"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/user": {
+        "get": {
+          "summary": "Send Login User data.",
+          "description": "This endpoint is used to send data of logged in user.",
+          "parameters": [],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Logged in user data."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/suspendUser/:id": {
+        "put": {
+          "summary": "Suspend user Account.",
+          "description": "This endpoint is used to change user status.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Authenticated user id used to suspend the status of logged in user.",
+              "type": "String",
+              "in":"query"
+
+            }
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User Account suspended."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/user/delete/:id": {
+        "delete": {
+          "summary": "Delete User Account.",
+          "description": "This endpoint is used to delete the user account.",
+          "parameters": [{
+            "name": "id",
+            "description": "Authenticated user id used to delete user.",
+            "type": "String",
+            "in": "query"
+
+          }],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "User Account Deleted."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/editSiteUser/:id": {
+        "put": {
+          "summary": "Edit user by admin.",
+          "description": "This endpoint is used that admin can edit user details.",
+          "parameters": [
+            {
+            "name": "id",
+            "description": "user id used to delete user.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+              "name": "firstName",
+              "description": "First Name of User.",
+              "type": "String"
+
+            }, {
+              "name": "lastName",
+              "description": "Last Name of User.",
+              "type": "String"
+
+            }, {
+              "name": "email",
+              "description": "Email of User.",
+              "type": "String"
+
+            }, {
+              "name": "password",
+              "description": "Password of User.",
+              "type": "String"
+
+            }, {
+              "role": "conform password",
+              "description": "Confirm Password of User",
+              "type": "String"
+
+            }, {
+              "name": "role",
+              "in": "query",
+              "enum": ["admin", "user"],
+              "description": "there are two roles of user first is 'user' and Second is 'admin'",
+              "type": "String"
+
+            }, {
+              "name": "profile_image",
+              "consumes": "multipart/form-data",
+              "in": "query",
+              "description": "Image of User",
+              "type": "String"
+
+            }, {
+              "name": "accountType",
+              "enum": ["student", "non-student"],
+              "description": "There two accountType first is student, and second is non-student .",
+              "type": "String"
+
+            }, {
+              "name": "school",
+              "in": "query",
+              "description": "if the user id student then this field is used to data.",
+              "type": "String"
+
+            }, {
+              "name": "city",
+              "in": "query",
+              "description": "City of User.",
+              "type": "String"
+
+            }, {
+              "name": "tickets",
+              "in": "query",
+              "description": "Every user give by default 5 tickets.",
+              "type": "Number"
+
+            }, {
+              "name": "status",
+              "in": "query",
+              "description": "There three status of user but in there endpoint the default status is deactive.",
+              "type": "String"
+            }
+
+          ],
+          "tags": [
+            "User"
+          ],
+          "responses": {
+            "200": {
+              "description": "Admin Edit User Account."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+
+      "/activities/reviewSeller": {
+        "post": {
+          "summary": "Review on Saller.",
+          "description": "A User can give review to Seller.",
+          "parameters": [
+            {
+            "name": "userid",
+            "description": "User Id who send review.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "review",
+            "description": "Review of User to Seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "bookid",
+            "description": "Book Id.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "type",
+            "enum": ["Book Review", "Seller Review"],
+            "description": "this query tell that review on book or seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "sellerid",
+            "description": "Book seller id",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Review Add on Seller."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/plateformComments": {
+        "post": {
+          "summary": "Comment about flipeet.",
+          "description": "A User can give any comment about flipeet.",
+          "parameters": [
+            {
+            "name": "userid",
+            "description": "User Id who send comment about flipeet.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "comment",
+            "description": "Comment about flipeet.",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Commented on flipeet."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/reportSeller": {
+        "post": {
+          "summary": "Report about seller.",
+          "description": "A User can give any report of seller.",
+          "parameters": [
+            
+            {
+            "name": "reporterID",
+            "description": "User Id who send report about seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "description",
+            "description": "Description of report about Seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "reporteeID",
+            "description": "Id of seller.",
+            "type": "String",
+            "in": "query"
+            }
+            
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Report about Seller."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/purchaseRequest": {
+        "post": {
+          "summary": " Book Purchase request Sent.",
+          "description": "A User can sent purchase resquest of a book to seller.",
+          "parameters": [
+            {
+            "name": "userid",
+            "description": "User Id who send purchase request to seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "sellerid",
+            "description": "Seller Id who book.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "bookid",
+            "description": "Book Id whose buy a buyer.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "email",
+            "description": "Email Id of buyer.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "description",
+            "description": "Description about purchase request.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "status",
+            "enum": ["Pending", "Accepted", "Rejected"],
+            "description": "This is status of request that is used to sent request.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "chargeId",
+            "description": "charge Id of Book.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "paymentMethod",
+            "description": "payment method of book.",
+            "type": "String",
+            "in": "query"
+            }
+            
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Purchase request Send Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getPurchaseRequestBuyer": {
+        "get": {
+          "summary": " Sent Purchase Requests show to Seller.",
+          "description": "Recieved Buyer purchase requests that is send from the User.",
+          "parameters": [
+            {
+            "name": "sellerid",
+            "description": "That is collect from loggedin user.",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": " All Purchase Request that is send from buyer."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getnewPurchaseRequestBuyer": {
+        "get": {
+          "summary": "Sent Purchase Request show to buyer",
+          "description": "Get Buyer purchase requests that is send from the User.",
+          "parameters": [
+            {
+            "name": "userid",
+            "description": "That is collect from loggedin user.",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Purchase request  show to sender."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/respondToPurchaseRequest": {
+        "post": {
+          "summary": "Respond purchase request",
+          "description": "Respond to purchase request that is submitted from buyer.",
+          "parameters": [
+            {
+            "name": "id",
+            "description": "purchase request id.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "status",
+            "enu": ["Accepted", "Rejected"],
+            "description": "Status is accept or reject that depend on seller.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "description",
+            "description": "Description about status send to buyer.",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Respond to Purchase Request to buyer."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/buyTickets": {
+        "post": {
+          "summary": "Buy tickets",
+          "description": "User can buy tickets from flipeet.",
+          "parameters": [
+            
+            
+            
+            {
+            "name": "tickets",
+            "description": "User giver numbers of tickets.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "token",
+            "description": "Charge token give from client side.",
+            "type": "String",
+            "in": "query"
+            },
+            {
+            "name": "ticketAmount",
+            "description": "Amount of ticket that is set from client side.",
+            "type": "String",
+            "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Purchase tickets successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getTransactions": {
+        "post": {
+          "summary": "Get All of User",
+          "description": "All buying tickets transaction or books show",
+          "parameters": [
+            {
+            "name": "page",
+            "description": "page number is send from client.",
+            "type": "String",
+            "in": "query"
+            }
+           
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "All trasaction of loggedin user."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/referToFriend": {
+        "post": {
+          "summary": "Send Email Invitation",
+          "description": "This endpoint is used to send email ivitation to friend.",
+          "parameters": [{
+              "name": "email",
+              "description": "Email of friend that is send inviataion.",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Send Invitaion Email Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/editSiteInfo": {
+        "post": {
+          "summary": "Edit Site Content",
+          "description": "This endpoint is used Edit site content like slider, email, tickets rate etc.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "by derfault id equal to 1.",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "breadcrumbImage",
+              "description": "this is used to show image on site pages",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "promotionalImage",
+              "description": "That images is used to promot seller",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "sliderImage",
+              "description": "This images are slider image of home page.",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "contactUsEmail",
+              "description": "That is used to send email from users.",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "ticketPrice",
+              "description": "Price rate of tickets.",
+              "type": "Number",
+              "in": "query"
+            },
+            {
+              "name": "promoCode",
+              "description": "Promo code.",
+              "type": "Number",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Site Cotent Upodated."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getUsers": {
+        "post": {
+          "summary": "All user that are registered",
+          "description": "All users that are registered in site is show for admins",
+          "parameters": [{
+              "name": "page",
+              "description": "that is used for pagination",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Send Invitaion Email Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getPurchaseRequestsAdmin": {
+        "post": {
+          "summary": "All Purchase requeste",
+          "description": "that is used to show all purchases request to admin.",
+          "parameters": [{
+              "name": "page",
+              "description": "that is used for pagination",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "All Purchase request is show to admin"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/deletePurchaseRequest": {
+        "post": {
+          "summary": "All Purchase requeste",
+          "description": "that is used to show all purchases request to admin.",
+          "parameters": [{
+              "name": "id",
+              "description": "Purchase request id",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Delete Purchase request from admin side"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/addSliderImages": {
+        "post": {
+          "summary": "update Image Slider",
+          "description": "This endpoint is used to update images from admin on Home screen Slider.",
+          "parameters": [{
+              "name": "sliderImage",
+              "consumes": "multipart/form-data",
+              "description": "Purchase request id",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Slider Images updated"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/editBreadcrumbImages": {
+        "post": {
+          "summary": "update breadcrumb Image",
+          "description": "This endpoint is used to breadcrumb Image from admin on Home screen Slider.",
+          "parameters": [{
+              "name": "breadcrumbImage",
+              "consumes": "multipart/form-data",
+              "description": "Purchase request id",
+              "type": "String",
+              "in": "query"
+            }
+
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "breadcrumb Images updated"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getSiteContent": {
+        "post": {
+          "summary": "Get Site Content",
+          "description": "This endpoint is used get Site content like images, sliderImages, tickets amount etc.",
+          "parameters": [
+            {
+              "name": "breadcrumbImage",
+              "consumes": "multipart/form-data",
+              "description": "Purchase request id",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Get Site Content"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/add": {
+        "post": {
+          "summary": "Create Blog",
+          "description": "Blog is created by only admin to show users.",
+          "parameters": [
+            {
+              "name": "title",
+              "description": "Title of blog",
+              "type": "String",
+              "in": "query"
+            }, {
+              "name": "description",
+              "description": "Description of blog",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "image",
+              "consumes": "multipart/form-data",
+              "description": "Blog of Image",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Blog is Created."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/getAll": {
+        "get": {
+          "summary": "All Blogs Details ",
+          "description": "All blog data that only show to admin.",
+          "parameters": [],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Blogs of Details."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/home": {
+        "get": {
+          "summary": "Home Blogs Details ",
+          "description": "All blogs details of blog on home page.",
+          "parameters": [],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": " Home Blogs of Details."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/get/:id": {
+        "get": {
+          "summary": "Single Blog Data ",
+          "description": "Single Blog Details that is shown to user.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Blog",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Single Blog Details"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/edit/:id": {
+        "post": {
+          "summary": "Update Single Blog",
+          "description": "That is used to update the blog details.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Blog",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "title",
+              "description": "Title of blog",
+              "type": "String",
+              "in": "query"
+            }, {
+              "name": "description",
+              "description": "Description of blog",
+              "type": "String",
+              "in": "query"
+            }, {
+              "name": "image",
+              "consumes": "multipart/form-data",
+              "description": "Blog of Image",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Update Single Blog Details"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/blog_post/delete/:id": {
+        "delete": {
+          "summary": "Delete Single Blog",
+          "description": "That is used to delete the blog details.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Blog",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Delete Single Blog Details"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/siteUserData/:id": {
+        "get": {
+          "summary": "Show admin site content ",
+          "description": "Details of Site content that is show on Admin side.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Site Content",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Site Content Details"
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/contactUs": {
+        "post": {
+          "summary": "Contact Us",
+          "description": "That is used to Get details from user and send email to flipeet site email.",
+          "parameters": [
+            {
+              "name": "email",
+              "description": "Email od User",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "subject",
+              "description": "Subject is title of contact us form",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "description",
+              "description": "Description os contact us details that is input by user",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Contact Us Details Submitted Successfully."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/faq/create": {
+        "post": {
+          "summary": "Create FAQ",
+          "description": "That is Created only from admin.",
+          "parameters": [
+            {
+              "name": "question",
+              "description": "Question of Faq",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "answer",
+              "description": "Answer of Faq",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "FAQ created."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/faq/getAll": {
+        "get": {
+          "summary": "All Details of FAQs",
+          "description": "This is created from admin and show to user.",
+          "parameters": [],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "All Faq Details."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/faq/get/:id": {
+        "get": {
+          "summary": "Single Details of FAQ",
+          "description": "This is created from admin and show to user.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Faq",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Single Faq Details."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/faq/edit": {
+        "put": {
+          "summary": "Update Single Blog details",
+          "description": "This is created from admin and show to user.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Faq",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "question",
+              "description": "Question of Faq",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "answer",
+              "description": "Answer of Faq",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Update Single faq."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/faq/delete/:id": {
+        "delete": {
+          "summary": "Detele Single Details of FAQ",
+          "description": "This is created from admin and show to user.",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "Id of Faq",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Detele Single faq."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/notification/getAll": {
+        "get": {
+          "summary": "All Notification details",
+          "description": "That is created as a middlware and show to users.",
+          "parameters": [
+            {
+              "name": "user_id",
+              "description": "That is taken from Logged in user",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Notification Details."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/getuserComplaints": {
+        "post": {
+          "summary": "User Complains details",
+          "description": "All Complains that is created from user that are shows on admin side.",
+          "parameters": [],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "All Users Complaints."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/activities/subscribeNewsLetter": {
+        "post": {
+          "summary": "Subscribe News Letter Create",
+          "description": "That is use to subscribe the site created and get back details.",
+          "parameters": [
+            {
+              "name": "status",
+              "description": "Status of Subscribe News Letter",
+              "type": "String",
+              "in": "query"
+            },
+            {
+              "name": "email",
+              "description": "Email of Subscribe News Letter",
+              "type": "String",
+              "in": "query"
+            }
+          ],
+          "tags": [
+            "Activities"
+          ],
+          "responses": {
+            "200": {
+              "description": "Subscribe News Letter Created."
+            },
+            "default": {
+              "description": "Unexpected error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      }
+
+
+
+    }
+    
+  }
