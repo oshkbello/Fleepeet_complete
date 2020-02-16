@@ -12,7 +12,7 @@ export default () => {
                                     <Link to="/">
                                         <img src="images/logo/flipeetLogo1.png" alt="Flipeet Logo" />
                                     </Link>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                    <p>Connect with us</p>
                                 </div>
                                 <div className="footer__content">
                                     <ul className="social__net social__net--2 d-flex justify-content-center clr-scheme">

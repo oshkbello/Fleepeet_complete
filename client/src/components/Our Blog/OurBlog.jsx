@@ -20,7 +20,7 @@ class OurBlog extends React.Component {
                 <TopHeading
                   Title="Our"
                   Heading="Blog"
-                  Paragraph="There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form"
+                  Paragraph="Read new stories about our blog"
                 />
               </div>
             </div>
