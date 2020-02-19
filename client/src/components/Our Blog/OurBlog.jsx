@@ -20,7 +20,7 @@ class OurBlog extends React.Component {
                 <TopHeading
                   Title="Our"
                   Heading="Blog"
-                  Paragraph="Read new stories about our blog"
+                  Paragraph="Read new stories in our blog"
                 />
               </div>
             </div>
