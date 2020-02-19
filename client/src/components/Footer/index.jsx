@@ -17,8 +17,8 @@ export default () => {
                                 <div className="footer__content">
                                     <ul className="social__net social__net--2 d-flex justify-content-center clr-scheme">
                                         <li><a href="#"><i className="bi bi-facebook"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-google"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/comflipeet"><i className="bi bi-instagram"></i></a></li>
+                                        <li><a href="https://twitter.com/comflipeet"><i className="bi bi-twitter"></i></a></li>
                                         <li><a href="#"><i className="bi bi-linkedin"></i></a></li>
                                         <li><a href="#"><i className="bi bi-youtube"></i></a></li>
                                     </ul>
