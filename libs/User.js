@@ -46,7 +46,7 @@ module.exports = (modals) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.conformPassword = hash;
-                        
+
                         newUser.save().then(async user => {
                             user.password = undefined;
                             const resetURL = `${req.protocol}://flipeettest.herokuapp.com/verify/${user._id}`;
@@ -55,7 +55,7 @@ module.exports = (modals) => {
                             msg.to = user.email;
                             msg.from = 'support@flipeet.com';
                             msg.subject = "Please Verify Your Account";
-                            msg.text = `${resetURL} `;
+                            msg.text = `Verify your account. Click this link ${resetURL} `;
                             await Email.send(msg, () => { console.log(`Your Email Submitted Successfully at ${msg.to} From ${msg.from}`) });
                             res.status(200).json({
                                 message: 'Please Verify Account! And Check Email.'
@@ -105,7 +105,7 @@ module.exports = (modals) => {
                                     email: user.email,
                                     accountType: user.accountType,
                                     tickets: user.tickets,
-                                    status:user.status,
+                                    status: user.status,
                                     role: user.role
                                 }
                             });
@@ -164,23 +164,29 @@ module.exports = (modals) => {
                         message: 'User Does not Exit.'
                     });
                 }
-                
+
                 user.status = 'active';
-                 user.save().then((user)=>{
+                user.save().then((user) => {
                     let msg = {};
                     msg.to = user.email;
                     msg.from = 'support@flipeet.com';
                     msg.subject = "Account Registered Successfully";
-                    msg.text = `Hello ${user.firstName} Your Account Successfully Created at Flipeet. `;
-                     Email.send(msg, () => { console.log(`Your Email Submitted Successfully at ${msg.to} From ${msg.from}`) });
+                    msg.html = `<h3>Hello ${user.firstName}</h3> <br>Your Account Successfully Created at Flipeet.</br> <p>Welcome to the Flipeet Family, 
+                    you are part of a bigger cause. Flipeet is community of students from different institutions and cities across Canada buying,swapping and selling used textbooks. Our goal as a community, is helping students save extra money spent on books during the course of their educational journey, by providing different means of acquiring or selling off their books while welcoming questions and answers about improving the service. Members can comments about how the book was helpful for the course and the best way to use the text, even share class notes!
+                    </p> <br><p>Getting to know your community and benefits of your membership
+                    Learning the {Rules & Guides} of the community 
+                    Checking our {how-to} section on how to get the most out of the community 
+                    
+                    </p>`;
+                    Email.send(msg, () => { console.log(`Your Email Submitted Successfully at ${msg.to} From ${msg.from}`) });
                     user.password = undefined;
                     user.conformPassword = undefined;
                     res.status(200).json({
                         message: 'Your Account is Activated! Now You Can Login',
                         user
                     });
-                 })
-     
+                })
+
             } catch (error) {
                 if (error.name === 'CastError') {
                     return res.status(403).json({
@@ -204,11 +210,11 @@ module.exports = (modals) => {
                     });
                 }
 
-                const books = await Book.find({ user: req.params.id});
+                const books = await Book.find({ user: req.params.id });
                 // console.log(books);
                 const newbooks = books.map((book) => {
                     book.status = 'unpublished',
-                    book.save();
+                        book.save();
                     return book;
 
                 });
@@ -277,7 +283,7 @@ module.exports = (modals) => {
         },
 
         /***************edit site user info */
-        EditSiteUser:async (req,res,user)=>{
+        EditSiteUser: async (req, res, user) => {
             try {
                 const updatedUser = await User.findByIdAndUpdate(req.params.id, user);
                 console.log(updatedUser);
@@ -337,16 +343,16 @@ module.exports = (modals) => {
                     });
                 }
                 console.log('find user');
-                await Book.deleteMany({ user: req.params.id})
-                await Review.deleteMany({ userid: req.params.id})
-                await BookLikes.deleteMany({ userid: req.params.id});
-                await Transactions.deleteMany({ userid: req.params.id});
-                await ReportAdminSchema.deleteMany({ reporterID: req.params.id});
-                await PurchaseRequest.deleteMany({ userid: req.params.id});
-                await PurchaseRequest.deleteMany({ sellerid: req.params.id});
+                await Book.deleteMany({ user: req.params.id })
+                await Review.deleteMany({ userid: req.params.id })
+                await BookLikes.deleteMany({ userid: req.params.id });
+                await Transactions.deleteMany({ userid: req.params.id });
+                await ReportAdminSchema.deleteMany({ reporterID: req.params.id });
+                await PurchaseRequest.deleteMany({ userid: req.params.id });
+                await PurchaseRequest.deleteMany({ sellerid: req.params.id });
                 await User.deleteOne({ _id: req.params.id });
-                
-                
+
+
                 // console.log(books)
                 // console.log(reviews);
                 // console.log(bookLikes);
@@ -354,8 +360,8 @@ module.exports = (modals) => {
                 // console.log(reportsadmin);
 
 
-                
-                
+
+
 
 
                 res.status(200).json({
@@ -370,7 +376,7 @@ module.exports = (modals) => {
                 const user1 = await dbQuery.GetOne(User, {
                     _id: req.user._id
                 });
-                res.json({tickets:user1.tickets});
+                res.json({ tickets: user1.tickets });
             } catch (error) {
                 throw error;
             }
