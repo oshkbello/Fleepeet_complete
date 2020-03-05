@@ -12,13 +12,13 @@ export default () => {
                                     <Link to="/">
                                         <img src="images/logo/flipeetLogo1.png" alt="Flipeet Logo" />
                                     </Link>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                    <p>Connect with us</p>
                                 </div>
                                 <div className="footer__content">
                                     <ul className="social__net social__net--2 d-flex justify-content-center clr-scheme">
                                         <li><a href="#"><i className="bi bi-facebook"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-google"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/comflipeet"><i className="bi bi-instagram"></i></a></li>
+                                        <li><a href="https://twitter.com/comflipeet"><i className="bi bi-twitter"></i></a></li>
                                         <li><a href="#"><i className="bi bi-linkedin"></i></a></li>
                                         <li><a href="#"><i className="bi bi-youtube"></i></a></li>
                                     </ul>
