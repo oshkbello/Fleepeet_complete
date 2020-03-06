@@ -79,7 +79,7 @@ module.exports = (modals) => {
                     email: email
                 }).then(user => {
                     if (!user) return res.status(403).json({
-                        message: 'User Does not Exit.'
+                        message: 'User Does not Exist.'
                     });
 
                     bcrypt.compare(password, user.password).then(isMatch => {
