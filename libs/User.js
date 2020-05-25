@@ -49,7 +49,7 @@ module.exports = (modals) => {
 
                         newUser.save().then(async user => {
                             user.password = undefined;
-                            const resetURL = `${req.protocol}://flipeettest.herokuapp.com/verify/${user._id}`;
+                            const resetURL = `${req.protocol}://flipeet.com/verify/${user._id}`;
                             // await new Email(user, resetURL).sendConfirmation();
                             let msg = {};
                             msg.to = user.email;
