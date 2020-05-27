@@ -40,7 +40,6 @@ module.exports = (modals) => {
                     description: 'Please Use Another Email to Sign up'
                 });
                 const newUser = new User(user);
-
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
@@ -260,7 +259,7 @@ module.exports = (modals) => {
                 user.passwordResetExpires = Date.now() + 10 * 60 * 1000;
                 await user.save();
                 try {
-                    const resetURL = `${req.protocol}://flipeettest.herokuapp.com/reset-password/${resetToken}`;
+                    const resetURL = `${req.protocol}://flipeet.com/reset-password/${resetToken}`;
                     let msg = {};
                     msg.to = user.email;
                     msg.from = 'support@flipeet.com';
@@ -313,12 +312,12 @@ module.exports = (modals) => {
                         message: 'User Does not Exit.'
                     });
                 }
-                const resetURL = `${req.protocol}://flipeettest.herokuapp.com/verify/${user._id}`;
+                const resetURL = `${req.protocol}://flipeet.com/verify/${user._id}`;
 
                 let msg = {};
                 msg.to = user.email;
                 msg.from = 'support@flipeet.com';
-                msg.subject = "Reset Your Password";
+                msg.subject = "Activate Your Password";
                 msg.text = `${resetURL} `;
                 await Email.send(msg, () => { console.log(`Your Email Submitted Successfully at ${msg.to} From ${msg.from}`) });
 
