@@ -41,7 +41,7 @@
     "http-server": "^0.12.1",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.24.0",
     "mongoosastic": "^4.5.1",
